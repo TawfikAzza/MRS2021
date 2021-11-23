@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="movierecsys.gui.controller.MovieRecController">
+   <top>
+      <VBox alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="200.0" text="MRS 2021" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Book Antiqua Bold" size="30.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </top>
+   <center>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txtMovieSearch" onKeyTyped="#searchMovie" promptText="search movies" />
+            <ListView fx:id="lstMovies" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#updateMovieFieldsByKey" onMouseClicked="#updateMovieFieldsByMouse" prefHeight="400.0" prefWidth="454.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="18.0" prefWidth="100.0" text="Movie Number" visible="false" />
+            <TextField fx:id="txtIdMovie" prefHeight="19.0" prefWidth="100.0" visible="false" />
+            <Label prefHeight="18.0" prefWidth="102.0" text="Movie Name" />
+            <TextField fx:id="txtNameMovie" />
+            <Label prefHeight="18.0" prefWidth="100.0" text="Year of release" />
+            <TextField fx:id="txtYearMovie" />
+            <Separator prefHeight="22.0" prefWidth="100.0" />
+            <Button fx:id="btnCreateMovie" mnemonicParsing="false" onAction="#createMovie" prefHeight="26.0" prefWidth="107.0" text="Create Movie" />
+            <Separator prefHeight="24.0" prefWidth="100.0" />
+            <Button fx:id="btnModifyMovie" mnemonicParsing="false" onAction="#modifyMovie" prefHeight="26.0" prefWidth="103.0" text="Modify Movie" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="300.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="18.0" prefWidth="102.0" text="Search User by ID" />
+            <TextField fx:id="txtIdUser" onAction="#searchUserById" />
+            <Label prefHeight="18.0" prefWidth="98.0" text="User name" />
+            <TextField fx:id="txtUserName" />
+            <Label prefHeight="18.0" prefWidth="108.0" text="User List" />
+            <ListView fx:id="lstUser" onKeyPressed="#updateUserFieldsByKey" onMouseClicked="#updateUserFieldsByMouse" prefHeight="132.0" prefWidth="89.0" />
+            <Separator prefHeight="38.0" prefWidth="100.0" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" text="Button" />
+            <Separator prefHeight="25.0" prefWidth="100.0" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" text="Button" />
+            <Separator prefHeight="22.0" prefWidth="100.0" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Button" />
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox prefHeight="95.0" prefWidth="354.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
+</BorderPane>
